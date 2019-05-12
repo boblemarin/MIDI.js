@@ -1,6 +1,6 @@
 # MIDI.js - a tiny helper around the WebMIDI API
 
-MIDI.js is a tiny library providing some help to kick-start WebMIDI-enabled projects. 
+MIDI.js is a tiny library providing some help to kick-start WebMIDI-enabled projects. See it in action on this [example page](https://github.com/boblemarin/MIDI.js).
 
 ## Features
 
