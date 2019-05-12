@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>MIDI.js example</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      html { box-sizing: border-box; }
+      *, *:before, *:after { box-sizing: inherit; }
+    </style>
+  </head>
+  <body>
+    <h2>MIDI.js example page</h2>
+    <hr>
+    <p>Outputs : 
+      <select id="midi-output-select"></select>
+    </p>
+    <p>Send 
+      <button id="sendNoteOn">Note ON</button> 
+      <button id="sendNoteOff">Note OFF</button>
+    </p>
+    <hr>
+    <p>Inputs : 
+      <select id="midi-input-select"></select>
+    </p>
+    <p>Incoming :</p>
+    <ul id="incoming"></ul>
+    <hr>
+    <script src="MIDI.js"></script>
+    <script type="text/javascript">
+
+      // send messages with buttons
+      document.querySelector( '#sendNoteOn' ).addEventListener( 'click', ( e ) => {
+        MIDI.noteOn( 1, 60, 100 );
+      });
+      document.querySelector( '#sendNoteOff' ).addEventListener( 'click', ( e ) => {
+        MIDI.noteOn( 1, 60 );
+      });
+
+      // listen for incoming MIDI messages
+      let messageList = document.querySelector( '#incoming' );
+
+      let callback = ( data ) => {
+        let li = document.createElement( 'li' );
+        li.innerHTML = data.join( ' : ' );
+        messageList.appendChild( li );
+      };
+      MIDI.setDelegateFunction( callback );
+
+    </script>
+  </body>
+</html>
