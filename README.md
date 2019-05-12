@@ -1,4 +1,4 @@
-# MIDI.js - an tiny helper around the WebMIDI API
+# MIDI.js - a tiny helper around the WebMIDI API
 
 MIDI.js is a tiny library providing some help to kick-start WebMIDI-enabled projects. 
 
@@ -81,7 +81,3 @@ Activate debug output in the console :
 ```
 MIDI.debug(true);
 ```
-
-##Credits
-
-MIDI.js was created by boblemarin
